@@ -12,3 +12,5 @@ Diongenix is an interactive storytelling system that uses ontologies to guide na
 1. Clone the repository:
    ```bash
    git clone https://github.com/its-not-rocket-science/dynamic-ontology-driven-storymaker.git
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.

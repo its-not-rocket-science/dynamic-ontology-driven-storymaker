@@ -1,0 +1,40 @@
+<!-- mystery_ontology.owl -->
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:mystery="http://example.org/mystery#">
+
+    <!-- Classes -->
+    <owl:Class rdf:about="http://example.org/mystery#Suspect"/>
+    <owl:Class rdf:about="http://example.org/mystery#Clue"/>
+    <owl:Class rdf:about="http://example.org/mystery#Location"/>
+    <owl:Class rdf:about="http://example.org/mystery#Motive"/>
+
+    <!-- Properties -->
+    <owl:ObjectProperty rdf:about="http://example.org/mystery#hasClue">
+        <rdfs:domain rdf:resource="http://example.org/mystery#Suspect"/>
+        <rdfs:range rdf:resource="http://example.org/mystery#Clue"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://example.org/mystery#hasMotive">
+        <rdfs:domain rdf:resource="http://example.org/mystery#Suspect"/>
+        <rdfs:range rdf:resource="http://example.org/mystery#Motive"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://example.org/mystery#locatedAt">
+        <rdfs:domain rdf:resource="http://example.org/mystery#Clue"/>
+        <rdfs:range rdf:resource="http://example.org/mystery#Location"/>
+    </owl:ObjectProperty>
+
+    <!-- Instances -->
+    <mystery:Suspect rdf:about="http://example.org/mystery#JohnDoe">
+        <mystery:hasClue rdf:resource="http://example.org/mystery#Fingerprint"/>
+        <mystery:hasMotive rdf:resource="http://example.org/mystery#Revenge"/>
+    </mystery:Suspect>
+
+    <mystery:Clue rdf:about="http://example.org/mystery#Fingerprint"/>
+    <mystery:Location rdf:about="http://example.org/mystery#CrimeScene"/>
+    <mystery:Motive rdf:about="http://example.org/mystery#Revenge"/>
+</rdf:RDF>

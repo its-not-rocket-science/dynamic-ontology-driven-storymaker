@@ -1,0 +1,38 @@
+<!-- scifi_ontology.owl -->
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:scifi="http://example.org/scifi#">
+
+    <!-- Classes -->
+    <owl:Class rdf:about="http://example.org/scifi#Spaceship"/>
+    <owl:Class rdf:about="http://example.org/scifi#Planet"/>
+    <owl:Class rdf:about="http://example.org/scifi#Alien"/>
+    <owl:Class rdf:about="http://example.org/scifi#Technology"/>
+
+    <!-- Properties -->
+    <owl:ObjectProperty rdf:about="http://example.org/scifi#pilots">
+        <rdfs:domain rdf:resource="http://example.org/scifi#Character"/>
+        <rdfs:range rdf:resource="http://example.org/scifi#Spaceship"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://example.org/scifi#inhabits">
+        <rdfs:domain rdf:resource="http://example.org/scifi#Alien"/>
+        <rdfs:range rdf:resource="http://example.org/scifi#Planet"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://example.org/scifi#usesTechnology">
+        <rdfs:domain rdf:resource="http://example.org/scifi#Character"/>
+        <rdfs:range rdf:resource="http://example.org/scifi#Technology"/>
+    </owl:ObjectProperty>
+
+    <!-- Instances -->
+    <scifi:Spaceship rdf:about="http://example.org/scifi#MillenniumFalcon"/>
+    <scifi:Planet rdf:about="http://example.org/scifi#Tatooine"/>
+    <scifi:Alien rdf:about="http://example.org/scifi#Wookiee">
+        <scifi:inhabits rdf:resource="http://example.org/scifi#Kashyyyk"/>
+    </scifi:Alien>
+    <scifi:Technology rdf:about="http://example.org/scifi#Hyperdrive"/>
+</rdf:RDF>

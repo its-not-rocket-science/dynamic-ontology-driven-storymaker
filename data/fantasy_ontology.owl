@@ -1,0 +1,45 @@
+<!-- fantasy_ontology.owl -->
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:fantasy="http://example.org/fantasy#">
+
+    <!-- Classes -->
+    <owl:Class rdf:about="http://example.org/fantasy#Character"/>
+    <owl:Class rdf:about="http://example.org/fantasy#Race"/>
+    <owl:Class rdf:about="http://example.org/fantasy#Location"/>
+    <owl:Class rdf:about="http://example.org/fantasy#MagicSystem"/>
+
+    <!-- Properties -->
+    <owl:ObjectProperty rdf:about="http://example.org/fantasy#hasRace">
+        <rdfs:domain rdf:resource="http://example.org/fantasy#Character"/>
+        <rdfs:range rdf:resource="http://example.org/fantasy#Race"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://example.org/fantasy#livesIn">
+        <rdfs:domain rdf:resource="http://example.org/fantasy#Character"/>
+        <rdfs:range rdf:resource="http://example.org/fantasy#Location"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://example.org/fantasy#usesMagic">
+        <rdfs:domain rdf:resource="http://example.org/fantasy#Character"/>
+        <rdfs:range rdf:resource="http://example.org/fantasy#MagicSystem"/>
+    </owl:ObjectProperty>
+
+    <!-- Instances -->
+    <fantasy:Character rdf:about="http://example.org/fantasy#Aragorn">
+        <fantasy:hasRace rdf:resource="http://example.org/fantasy#Human"/>
+        <fantasy:livesIn rdf:resource="http://example.org/fantasy#Gondor"/>
+    </fantasy:Character>
+
+    <fantasy:Race rdf:about="http://example.org/fantasy#Elf"/>
+    <fantasy:Race rdf:about="http://example.org/fantasy#Human"/>
+    <fantasy:Race rdf:about="http://example.org/fantasy#Dwarf"/>
+
+    <fantasy:Location rdf:about="http://example.org/fantasy#Gondor"/>
+    <fantasy:Location rdf:about="http://example.org/fantasy#Rivendell"/>
+
+    <fantasy:MagicSystem rdf:about="http://example.org/fantasy#ElementalMagic"/>
+</rdf:RDF>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:fantasy="http://example.org/fantasy#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://example.org/fantasy#Race">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/fantasy#hasRace">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/fantasy#Character"/>
+    <rdfs:range rdf:resource="http://example.org/fantasy#Race"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/fantasy#Gondor">
+    <rdf:type rdf:resource="http://example.org/fantasy#Location"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/fantasy#Aragorn">
+    <rdf:type rdf:resource="http://example.org/fantasy#Character"/>
+    <fantasy:hasRace rdf:resource="http://example.org/fantasy#Human"/>
+    <fantasy:livesIn rdf:resource="http://example.org/fantasy#Gondor"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/fantasy#livesIn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/fantasy#Character"/>
+    <rdfs:range rdf:resource="http://example.org/fantasy#Location"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/fantasy#Dwarf">
+    <rdf:type rdf:resource="http://example.org/fantasy#Race"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/fantasy#MagicSystem">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/fantasy#Human">
+    <rdf:type rdf:resource="http://example.org/fantasy#Race"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/fantasy#usesMagic">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/fantasy#Character"/>
+    <rdfs:range rdf:resource="http://example.org/fantasy#MagicSystem"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/fantasy#Location">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/fantasy#ElementalMagic">
+    <rdf:type rdf:resource="http://example.org/fantasy#MagicSystem"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/fantasy#Elf">
+    <rdf:type rdf:resource="http://example.org/fantasy#Race"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/fantasy#Rivendell">
+    <rdf:type rdf:resource="http://example.org/fantasy#Location"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/fantasy#Character">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+</rdf:RDF>
