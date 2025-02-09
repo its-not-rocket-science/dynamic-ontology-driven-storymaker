@@ -1,3 +1,4 @@
+Flask
 transformers
 rdflib
 python-dotenv

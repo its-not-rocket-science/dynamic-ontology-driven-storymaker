@@ -1,19 +1,19 @@
-# src/user_interaction.py
+""" Module to handle user interaction with the story engine. """
+
+
 class UserInteraction:
+    """ Class to handle user interaction with the story engine. """
     def __init__(self, story_engine):
         self.story_engine = story_engine
 
     def start_story(self, prompt):
-        print("Welcome to Diongenix! Let's create a story together.")
+        """ Generate a story based on the user prompt. """
         if not prompt:
             return "Generated text does not conform to the ontology."
-        # prompt = input("Enter a starting point for the story: ")
         story = self.story_engine.generate_story(prompt)
-        print("\nGenerated Story:\n", story)
         return story
 
     def make_choice(self, choice):
-        # choice = input("\nWhat happens next? (Enter your choice): ")
+        """ Update the story based on user input. """
         updated_story = self.story_engine.update_story(choice)
-        print("\nUpdated Story:\n", updated_story)
         return updated_story
