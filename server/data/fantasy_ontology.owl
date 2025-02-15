@@ -33,6 +33,14 @@
         <fantasy:hasRace rdf:resource="http://example.org/fantasy#Human"/>
         <fantasy:livesIn rdf:resource="http://example.org/fantasy#Gondor"/>
     </fantasy:Character>
+    <fantasy:Character rdf:about="http://example.org/fantasy#Legolas">
+        <fantasy:hasRace rdf:resource="http://example.org/fantasy#Elf"/>
+        <fantasy:livesIn rdf:resource="http://example.org/fantasy#Rivendell"/>
+    </fantasy:Character>
+    <fantasy:Character rdf:about="http://example.org/fantasy#Gimli">
+        <fantasy:hasRace rdf:resource="http://example.org/fantasy#Dwarf"/>
+        <fantasy:livesIn rdf:resource="http://example.org/fantasy#Erebor"/>
+    </fantasy:Character>
 
     <fantasy:Race rdf:about="http://example.org/fantasy#Elf"/>
     <fantasy:Race rdf:about="http://example.org/fantasy#Human"/>
@@ -40,6 +48,7 @@
 
     <fantasy:Location rdf:about="http://example.org/fantasy#Gondor"/>
     <fantasy:Location rdf:about="http://example.org/fantasy#Rivendell"/>
+    <fantasy:Location rdf:about="http://example.org/fantasy#Erebor"/>
 
     <fantasy:MagicSystem rdf:about="http://example.org/fantasy#ElementalMagic"/>
 </rdf:RDF>

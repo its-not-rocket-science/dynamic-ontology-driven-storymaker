@@ -12,12 +12,26 @@ class StoryEngine:
         self.ontology_manager = OntologyManager(ontology_file)
         self.model = GPT2LMHeadModel.from_pretrained(model_name)
         self.tokenizer = GPT2Tokenizer.from_pretrained(model_name)
+        
+        self.tokenizer.pad_token = self.tokenizer.eos_token # pylint:disable=no-member
+        self.tokenizer.pad_token_id = self.tokenizer.eos_token_id # pylint:disable=no-member
 
     def generate_story(self, prompt):
         """ Generates sequences of token ids using the user prompt."""
-        inputs = self.tokenizer(prompt, return_tensors="pt")
+        inputs = self.tokenizer(
+            prompt,
+            return_tensors="pt",
+            padding=True,
+            truncation=True,
+            max_length=512,
+        )
         outputs = self.model.generate(
-            inputs["input_ids"], max_length=100, num_return_sequences=1)
+            inputs["input_ids"],
+            attention_mask=inputs["attention_mask"],
+            max_length=100,
+            num_return_sequences=1,
+            pad_token_id=self.tokenizer.pad_token_id
+        )
         return self.tokenizer.decode(outputs[0], skip_special_tokens=True)
 
     def update_story(self, user_input):

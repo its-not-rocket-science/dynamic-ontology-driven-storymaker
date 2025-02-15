@@ -1,6 +1,6 @@
 """ This file is used to define fixtures that can be used in the tests. """
 import pytest
-from src.app import app as flask_app
+from app import app as flask_app
 
 
 @pytest.fixture
